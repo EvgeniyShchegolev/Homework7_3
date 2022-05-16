@@ -14,10 +14,10 @@ def count_lines_files(file):
 
 
 def create_result_file(dict_files, file_res):
-    count_lines_sorted = dict(sorted(dict_files.items(), key=lambda x: x[1]))
+    dict_files_sorted = dict(sorted(dict_files.items(), key=lambda x: x[1]))
     path_to_file_result = os.path.join(PATH_DIR, file_res)
     with open(path_to_file_result, 'w', encoding='utf-8') as file_result:
-        for name_file, n_lines in count_lines_sorted.items():
+        for name_file, n_lines in dict_files_sorted.items():
             path_to_file = os.path.join(PATH_DIR, name_file)
             file_result.write(f'{name_file}\n')
             file_result.write(f'{n_lines}\n')
